@@ -74,7 +74,7 @@ public class TelaCadastro extends JFrame {
 		
 		JButton btnRetornar = new JButton("Retornar");
 		btnRetornar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) {//Retornando para a tela inicial
 				TelaInicial tela2 = new TelaInicial();
 				tela2.setVisible(true);
 				setVisible(false);
@@ -87,13 +87,16 @@ public class TelaCadastro extends JFrame {
 		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				pessoaDAO = new PessoaDAO();
-				PessoaModel aluno = new PessoaModel();
+				pessoaDAO = new PessoaDAO(); //Criando objeto pessoaDAO
+				PessoaModel aluno = new PessoaModel(); //---------- aluno
+				//pegando os valores dos textField
 				aluno.setNome(textFieldNome.getText());
 				aluno.setCPF(textFieldCPF.getText());
 				aluno.setCurso(textFieldCurso.getText());
-				aluno.setMatricula(Integer.parseInt(textFieldMatricula.getText()));
-				JOptionPane.showMessageDialog(contentPane, "Aluno cadastrado");}
+				aluno.setMatricula(Integer.parseInt(textFieldMatricula.getText()));//Aqui é necessário casting do valor recebido
+				JOptionPane.showMessageDialog(contentPane, "Aluno cadastrado");}//Mesagem de confirmação"cadastrar"
+				//Queria usar exption aqui pra não deixar cadastrar caso não estejam todos os campos preenchidos
+				//Será necessário tbm, limpar os campos após cada cadastro!
 		});
 		btnSalvar.setFont(new Font("Bitstream Charter", Font.BOLD, 16));
 		btnSalvar.setBounds(314, 226, 114, 25);

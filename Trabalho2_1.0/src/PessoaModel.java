@@ -15,8 +15,8 @@ public class PessoaModel {
 		this.matricula = matricula;
 	}
 	public PessoaModel() {
-		// TODO Auto-generated constructor stub
-	}
+		// Para setar os dados do objeto "aluno" do tipo PessoaModel
+		}
 	//Getters & Setters
 	public String getNome() {
 		return nome;

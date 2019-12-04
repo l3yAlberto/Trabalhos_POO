@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 
@@ -72,13 +73,18 @@ public class TelaDados extends JFrame {
 		contentPane.add(lblAlunosCasdastrar);
 		
 		JButton btnRemover = new JButton("Remover");
+		btnRemover.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//Aqui onde será chamado e emplementado o remover itens da coleção
+			}
+		});
 		btnRemover.setFont(new Font("Bitstream Charter", Font.BOLD, 16));
 		btnRemover.setBounds(301, 216, 114, 25);
 		contentPane.add(btnRemover);
 		
 		JButton button_1 = new JButton("Retornar");
 		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) {//Retornando para a tela inicial
 				TelaInicial tela3 = new TelaInicial();
 				tela3.setVisible(true);
 				setVisible(false);
@@ -90,16 +96,15 @@ public class TelaDados extends JFrame {
 		
 		JButton btnAtualizar = new JButton("Atualizar");
 		btnAtualizar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) {//Aqui fica onde quero pegar os dados da coleção e jogar em uma arrayList
+				
+				ArrayList<PessoaModel> alunosCadastrados = new ArrayList<PessoaModel>();
+				//Aqui é onde é pra acontecer amgica, pra atualizar os dados, jogar na tela e mostrar
 				
 			}
 		});
 		btnAtualizar.setFont(new Font("Bitstream Charter", Font.BOLD, 16));
 		btnAtualizar.setBounds(54, 216, 114, 25);
 		contentPane.add(btnAtualizar);
-		
-		JList list = new JList();
-		list.setBounds(59, 6, 1, 1);
-		contentPane.add(list);
 	}
 }

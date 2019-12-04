@@ -67,7 +67,7 @@ public class TelaInicial extends JFrame {
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) {//Ir para a tela de cadastro
 				TelaCadastro tela1 = new TelaCadastro();
 				tela1.setVisible(true);
 				setVisible(false);
@@ -79,7 +79,7 @@ public class TelaInicial extends JFrame {
 		
 		JButton btnVisualizar = new JButton("Visualizar");
 		btnVisualizar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) { //Ir para a tela de Dados
 				TelaDados tela1 = new TelaDados();
 				tela1.setVisible(true);
 				setVisible(false);
