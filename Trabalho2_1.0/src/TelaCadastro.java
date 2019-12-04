@@ -94,7 +94,14 @@ public class TelaCadastro extends JFrame {
 				aluno.setCPF(textFieldCPF.getText());
 				aluno.setCurso(textFieldCurso.getText());
 				aluno.setMatricula(Integer.parseInt(textFieldMatricula.getText()));//Aqui é necessário casting do valor recebido
-				JOptionPane.showMessageDialog(contentPane, "Aluno cadastrado");}//Mesagem de confirmação"cadastrar"
+				JOptionPane.showMessageDialog(contentPane, "Aluno cadastrado");
+				//Após o cadastro limpa o textField
+				textFieldNome.setText("");
+				textFieldCPF.setText("");
+				textFieldCurso.setText("");
+				textFieldMatricula.setText("");
+				
+				}//Mesagem de confirmação"cadastrar"
 				//Queria usar exption aqui pra não deixar cadastrar caso não estejam todos os campos preenchidos
 				//Será necessário tbm, limpar os campos após cada cadastro!
 		});
