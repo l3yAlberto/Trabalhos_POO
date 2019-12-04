@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.UIManager;
 
 public class TelaDados extends JFrame {
 
@@ -64,6 +66,22 @@ public class TelaDados extends JFrame {
 		contentPane.setLayout(null);
 		
 		table = new JTable();
+		table.setBorder(UIManager.getBorder("Button.border"));
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"Dados_Cadastrados_At\u00E9_Agora"
+			}
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		table.getColumnModel().getColumn(0).setPreferredWidth(519);
 		table.setBounds(28, 38, 387, 166);
 		contentPane.add(table);
 		
@@ -75,7 +93,7 @@ public class TelaDados extends JFrame {
 		JButton btnRemover = new JButton("Remover");
 		btnRemover.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Aqui onde será chamado e emplementado o remover itens da coleção
+				//Aqui onde será chamado e emplementado o remover itens da coleç
 			}
 		});
 		btnRemover.setFont(new Font("Bitstream Charter", Font.BOLD, 16));
@@ -94,13 +112,10 @@ public class TelaDados extends JFrame {
 		button_1.setBounds(175, 216, 114, 25);
 		contentPane.add(button_1);
 		
-		JButton btnAtualizar = new JButton("Atualizar");
+		JButton btnAtualizar = new JButton("Atualizar");//Atualizar dados da Jtable
 		btnAtualizar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {//Aqui fica onde quero pegar os dados da coleção e jogar em uma arrayList
-				
-				ArrayList<PessoaModel> alunosCadastrados = new ArrayList<PessoaModel>();
-				//Aqui é onde é pra acontecer amgica, pra atualizar os dados, jogar na tela e mostrar
-				
+			public void actionPerformed(ActionEvent arg0) {
+			
 			}
 		});
 		btnAtualizar.setFont(new Font("Bitstream Charter", Font.BOLD, 16));

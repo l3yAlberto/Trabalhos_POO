@@ -41,7 +41,5 @@ public class PessoaModel {
 	}
 	public void setMatricula(int matricula) {
 		this.matricula = matricula;
-	}
-	
-	
+	}	
 }

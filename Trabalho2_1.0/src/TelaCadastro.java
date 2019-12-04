@@ -89,21 +89,20 @@ public class TelaCadastro extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				pessoaDAO = new PessoaDAO(); //Criando objeto pessoaDAO
 				PessoaModel aluno = new PessoaModel(); //---------- aluno
+				
 				//pegando os valores dos textField
 				aluno.setNome(textFieldNome.getText());
 				aluno.setCPF(textFieldCPF.getText());
 				aluno.setCurso(textFieldCurso.getText());
 				aluno.setMatricula(Integer.parseInt(textFieldMatricula.getText()));//Aqui é necessário casting do valor recebido
-				JOptionPane.showMessageDialog(contentPane, "Aluno cadastrado");
-				//Após o cadastro limpa o textField
+				JOptionPane.showMessageDialog(contentPane, "Aluno cadastrado");//Mesagem de confirmação
+				
+				//Após o cadastro limpa o textFieldaluno
 				textFieldNome.setText("");
 				textFieldCPF.setText("");
 				textFieldCurso.setText("");
-				textFieldMatricula.setText("");
-				
-				}//Mesagem de confirmação"cadastrar"
-				//Queria usar exption aqui pra não deixar cadastrar caso não estejam todos os campos preenchidos
-				//Será necessário tbm, limpar os campos após cada cadastro!
+				textFieldMatricula.setText("");	
+				}
 		});
 		btnSalvar.setFont(new Font("Bitstream Charter", Font.BOLD, 16));
 		btnSalvar.setBounds(314, 226, 114, 25);
